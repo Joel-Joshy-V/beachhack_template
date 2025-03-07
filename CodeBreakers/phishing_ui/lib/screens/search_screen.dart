@@ -38,7 +38,11 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         title: Text(
           'SEARCH',
-          style: TextStyle(color: const Color.fromARGB(193, 0, 0, 0)),
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: const Color.fromARGB(171, 0, 0, 0), // Alert color
+          ),
         ),
       ),
       body: Padding(
@@ -90,8 +94,12 @@ class _SearchScreenState extends State<SearchScreen> {
             ElevatedButton(onPressed: _performSearch, child: Text('Search')),
             SizedBox(height: 16),
             Text(
-              'Search Result: $_searchResult',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              'Link Status : SECURE',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(171, 0, 0, 0), // Alert color
+              ),
             ),
 
             ElevatedButton.icon(
@@ -103,7 +111,11 @@ class _SearchScreenState extends State<SearchScreen> {
             _selectedFile != null
                 ? Text("Selected File: ${_selectedFile!.path.split('/').last}")
                 : Text("No file selected"),
-            SizedBox(width: 500, height: 500, child: ProgressScreen()),
+            SizedBox(
+              width: 500,
+              height: 500,
+              child: ProgressScreen(percentage: 75),
+            ),
           ],
         ),
       ),
